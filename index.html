@@ -55,16 +55,18 @@
   </select>
 
   <!-- ③ 生成ボタン -->
-  <div style="margin-top:16px;">
-    <button onclick="generateLayout()">生成する</button>
-  </div>
+ <button id="generateBtn">生成する</button>
 
-  <!-- ④ 生成中表示 -->
-  <p id="loading" style="display:none;">生成中です…</p>
-  
-  <div class="ad-box">
-  <p>広告表示エリア</p>
-  </div>
+<div class="loading" style="display:none;">
+  生成中です…
+</div>
+
+<div class="ad-box" style="display:none;">
+  広告表示エリア
+</div>
+
+<div class="result"></div>
+
 
 
   <!-- ⑤ 結果表示 -->
