@@ -81,8 +81,8 @@ button {
 }
 
 .patternBtn.active {
-  background: #4f46e5;
-  color: #fff;
-  box-shadow: 0 0 0 2px #c7d2fe;
+  background: red !important;
+  color: white !important;
 }
+
 }
