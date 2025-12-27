@@ -22,11 +22,21 @@ imageInput.addEventListener("change", () => {
 // 家具配置パターン
 let selectedPattern = "random";
 
-document.querySelectorAll(".patternBtn").forEach((btn) => {
+const patternButtons = document.querySelectorAll(".patternBtn");
+
+patternButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
+    // 全ボタンのハイライト解除
+    patternButtons.forEach((b) => b.classList.remove("active"));
+
+    // 押されたボタンをハイライト
+    btn.classList.add("active");
+
+    // 選択パターン保存
     selectedPattern = btn.dataset.type;
   });
 });
+
 
 const patterns = {
   hotel: "ベッドは中央、サイドテーブルを左右に配置。動線をシンプルに。",

@@ -69,4 +69,20 @@ button {
   padding: 16px;
   background: #fafafa;
   border-radius: 8px;
+.pattern-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.patternBtn {
+  flex: 1;
+  background: #e5e7eb;
+  color: #111;
+}
+
+.patternBtn.active {
+  background: #4f46e5;
+  color: #fff;
+  box-shadow: 0 0 0 2px #c7d2fe;
+}
 }
