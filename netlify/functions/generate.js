@@ -1,4 +1,8 @@
 export default async (req, context) => {
+   console.log(
+    "API TOKEN EXISTS:",
+    !!process.env.REPLICATE_API_TOKEN
+  );
   if (req.method !== "POST") {
     return new Response("Method Not Allowed", { status: 405 });
   }
