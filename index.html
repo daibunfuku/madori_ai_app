@@ -24,9 +24,13 @@
     </button>
 
     <!-- 生成中表示 -->
-    <div id="loading" class="loading" style="display:none;">
-      生成中です…しばらくお待ちください
-    </div>
+    <div id="loading" class="loading-overlay" style="display:none;">
+  <div class="loading-box">
+    <div class="spinner"></div>
+    <p>生成中です…<br>30秒ほどかかる場合があります</p>
+  </div>
+</div>
+
 
     <!-- エラー表示 -->
     <p id="error" class="error"></p>
