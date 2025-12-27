@@ -14,13 +14,13 @@ export default async (req, context) => {
           "Authorization": `Token ${process.env.REPLICATE_API_TOKEN}`,
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          version: "lucataco/sdxl-controlnet:06d6fae3b75ab68a28cd2900afa6033166910dd09fd9751047043a5bbb4c184b",
-          input: {
-            prompt: prompt,
-            num_inference_steps: 30
-          }
-        })
+      body: JSON.stringify({
+  version: "stability-ai/sdxl:39ed52f2a78e934b3ba6e2a89f5b1c712de7d6b3f6c8aaf4e52b8c4b5f6d8c6a",
+  input: {
+    prompt: prompt
+  }
+})
+
       }
     );
 
