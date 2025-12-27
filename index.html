@@ -2,43 +2,13 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>間取りAI 試作</title>
-  <link rel="stylesheet" href="style.css">
+  <title>間取りAI試作</title>
 </head>
 <body>
 
-  <h1>間取りAIレイアウト提案（試作）</h1>
-
-  <!-- 画像アップロード -->
-  <div class="card">
-    <label>間取り図をアップロード</label>
-    <input type="file" id="imageInput" accept="image/*">
-    <img id="previewImage" />
-  </div>
-
-  <!-- 配置パターン選択（プルダウン） -->
-  <div class="card">
-    <label>家具配置パターン</label>
-    <select id="patternSelect">
-      <option value="random">ランダム</option>
-      <option value="hotel">ホテル寄り</option>
-      <option value="living">生活寄り</option>
-    </select>
-  </div>
-
-  <!-- 生成ボタン -->
   <button id="generateBtn">生成する</button>
-
-  <!-- 生成中表示 -->
-  <div id="loading" class="hidden">生成中です…</div>
-
-  <!-- 広告（ダミー） -->
-  <div id="adArea" class="hidden">
-    <p>📢 広告表示エリア</p>
-  </div>
-
-  <!-- 結果表示 -->
-  <div id="result"></div>
+  <p id="status"></p>
+  <img id="resultImage" style="max-width:100%;" />
 
   <script src="script.js"></script>
 </body>

@@ -1,49 +1,32 @@
-console.log("script.js 読み込みOK");
+const btn = document.getElementById("generateBtn");
+const status = document.getElementById("status");
+const img = document.getElementById("resultImage");
 
-// 要素取得
-const imageInput = document.getElementById("imageInput");
-const previewImage = document.getElementById("previewImage");
-const patternSelect = document.getElementById("patternSelect");
-const generateBtn = document.getElementById("generateBtn");
-const loading = document.getElementById("loading");
-const adArea = document.getElementById("adArea");
-const result = document.getElementById("result");
+btn.addEventListener("click", async () => {
+  status.textContent = "生成中です…";
+  img.src = "";
 
-// 画像アップロード表示
-imageInput.addEventListener("change", () => {
-  const file = imageInput.files[0];
-  if (!file) return;
+  try {
+    const res = await fetch("/.netlify/functions/generate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        prompt: "3D bird's-eye view interior layout from a Japanese floor plan, realistic lighting"
+      })
+    });
 
-  const reader = new FileReader();
-  reader.onload = () => {
-    previewImage.src = reader.result;
-    previewImage.style.display = "block";
-  };
-  reader.readAsDataURL(file);
+    const data = await res.json();
+
+    if (data.image) {
+      img.src = data.image;
+      status.textContent = "生成完了";
+    } else {
+      status.textContent = "生成失敗";
+      console.error(data);
+    }
+  } catch (e) {
+    status.textContent = "エラーが発生しました";
+    console.error(e);
+  }
 });
 
-// 生成ボタン
-generateBtn.addEventListener("click", () => {
-  const selectedPattern = patternSelect.value;
-
-  // 生成中ON
-  loading.classList.remove("hidden");
-  adArea.classList.add("hidden");
-  result.innerHTML = "";
-
-  console.log("選択パターン:", selectedPattern);
-
-  // 疑似生成（API想定）
-  setTimeout(() => {
-    loading.classList.add("hidden");
-
-    // 広告表示
-    adArea.classList.remove("hidden");
-
-    // 結果表示（仮）
-    result.innerHTML = `
-      <p>✅ 配置パターン：<strong>${selectedPattern}</strong></p>
-      <p>（ここに生成された俯瞰図が表示されます）</p>
-    `;
-  }, 2000);
-});
