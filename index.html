@@ -2,16 +2,49 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>間取りAI試作</title>
+  <title>間取りAI インテリア提案（試作）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <button id="generateBtn">生成する</button>
-  <p id="status"></p>
-  <img id="resultImage" style="max-width:100%;" />
+  <div class="container">
+    <h1>間取りAI インテリア提案（試作版）</h1>
 
+    <!-- 説明 -->
+    <p class="description">
+      間取りをもとに、家具配置を3D俯瞰イメージで自動生成します。
+    </p>
+
+    <!-- 生成ボタン -->
+    <button id="generateBtn">
+      生成する
+    </button>
+
+    <!-- 生成中表示 -->
+    <div id="loading" class="loading" style="display:none;">
+      生成中です…しばらくお待ちください
+    </div>
+
+    <!-- エラー表示 -->
+    <p id="error" class="error"></p>
+
+    <!-- 生成結果 -->
+    <div class="result">
+      <img
+        id="resultImage"
+        alt="生成された3D俯瞰イメージ"
+        style="display:none;"
+      />
+    </div>
+  </div>
+
+  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
