@@ -1,122 +1,72 @@
-/* ===== 全体リセット ===== */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
 }
 
-/* ===== ページ全体 ===== */
 body {
   background: #f5f5f5;
-  color: #333;
   padding: 16px;
 }
 
-/* ===== コンテナ ===== */
 .container {
   max-width: 900px;
   margin: 0 auto;
-  background: #ffffff;
+  background: #fff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-/* ===== 見出し ===== */
 h1 {
-  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+input[type="file"] {
   margin-bottom: 12px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.1rem;
-  margin: 24px 0 12px;
-}
-
-/* ===== ボタン ===== */
-button {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  font-size: 1rem;
-  background: #4f46e5;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-button:hover {
-  background: #4338ca;
-}
-
-/* ===== 生成中表示 ===== */
-.loading {
-  margin: 16px 0;
-  text-align: center;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* ===== アップロード画像 ===== */
-.upload-preview {
-  margin-top: 16px;
-  text-align: center;
 }
 
 .upload-preview img {
   max-width: 100%;
-  border-radius: 10px;
-  border: 1px solid #ddd;
+  display: none;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
-/* ===== 結果表示エリア ===== */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.pattern-buttons button {
+  background: #6b7280;
+}
+
+.loading {
+  display: none;
+  text-align: center;
+  margin: 16px 0;
+}
+
+.ad-box {
+  display: none;
+  margin: 16px 0;
+  padding: 16px;
+  border: 2px dashed #ccc;
+  text-align: center;
+  color: #777;
+}
+
 .result {
-  margin-top: 20px;
+  margin-top: 16px;
   padding: 16px;
   background: #fafafa;
-  border-radius: 10px;
-  border: 1px solid #eee;
-}
-
-/* ===== 広告エリア ===== */
-.ad-box {
-  margin: 20px 0;
-  padding: 16px;
-  border: 2px dashed #c7c7c7;
-  border-radius: 10px;
-  text-align: center;
-  background: #f9f9f9;
-  color: #777;
-  font-size: 0.85rem;
-}
-
-/* 広告ラベルっぽく */
-.ad-box::before {
-  content: "AD";
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: bold;
-  color: #999;
-  margin-bottom: 6px;
-}
-
-/* ===== スマホ最適化 ===== */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.2rem;
-  }
-
-  button {
-    font-size: 0.95rem;
-    padding: 12px;
-  }
-
-  .container {
-    padding: 16px;
-  }
+  border-radius: 8px;
 }
