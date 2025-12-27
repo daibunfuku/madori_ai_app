@@ -1,129 +1,122 @@
-/* =========================
-   全体設定
-========================= */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  background: #f7f7f7;
+/* ===== 全体リセット ===== */
+* {
+  box-sizing: border-box;
   margin: 0;
-  padding: 16px;
-  color: #333;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
 }
 
-/* =========================
-   コンテナ
-========================= */
+/* ===== ページ全体 ===== */
+body {
+  background: #f5f5f5;
+  color: #333;
+  padding: 16px;
+}
+
+/* ===== コンテナ ===== */
 .container {
-  max-width: 720px;
-  margin: auto;
+  max-width: 900px;
+  margin: 0 auto;
   background: #ffffff;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-/* =========================
-   見出し
-========================= */
+/* ===== 見出し ===== */
 h1 {
-  font-size: 20px;
-  margin-bottom: 16px;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 h2 {
-  font-size: 16px;
-  margin-top: 24px;
+  font-size: 1.1rem;
+  margin: 24px 0 12px;
 }
 
-/* =========================
-   フォーム要素
-========================= */
-input[type="file"],
-select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-/* =========================
-   ボタン
-========================= */
+/* ===== ボタン ===== */
 button {
+  display: block;
   width: 100%;
-  margin-top: 16px;
   padding: 14px;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 1rem;
+  background: #4f46e5;
   color: #fff;
-  background: linear-gradient(135deg, #4f8cff, #3a6fd8);
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 button:hover {
-  opacity: 0.9;
+  background: #4338ca;
 }
 
-/* =========================
-   生成中表示
-========================= */
-#loading {
-  margin-top: 20px;
-  padding: 12px;
+/* ===== 生成中表示 ===== */
+.loading {
+  margin: 16px 0;
   text-align: center;
-  background: #eef3ff;
-  border-radius: 8px;
-  font-weight: bold;
+  font-size: 0.95rem;
+  color: #555;
 }
 
-/* =========================
-   結果表示
-========================= */
-#result {
-  margin-top: 24px;
-}
-
-#description {
-  background: #f0f4f8;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 14px;
-}
-
-/* 家具配置テキスト */
-#layoutText {
-  margin-top: 12px;
-  padding-left: 20px;
-  font-size: 14px;
-}
-
-/* =========================
-   画像表示
-========================= */
-img {
+/* ===== アップロード画像 ===== */
+.upload-preview {
   margin-top: 16px;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  text-align: center;
 }
 
-/* =========================
-   スマホ対応
-========================= */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 18px;
-  }
-#previewArea img {
-  width: 100%;
+.upload-preview img {
+  max-width: 100%;
   border-radius: 10px;
-  margin-top: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 1px solid #ddd;
 }
 
+/* ===== 結果表示エリア ===== */
+.result {
+  margin-top: 20px;
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+/* ===== 広告エリア ===== */
+.ad-box {
+  margin: 20px 0;
+  padding: 16px;
+  border: 2px dashed #c7c7c7;
+  border-radius: 10px;
+  text-align: center;
+  background: #f9f9f9;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* 広告ラベルっぽく */
+.ad-box::before {
+  content: "AD";
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #999;
+  margin-bottom: 6px;
+}
+
+/* ===== スマホ最適化 ===== */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .container {
+    padding: 16px;
+  }
 }
